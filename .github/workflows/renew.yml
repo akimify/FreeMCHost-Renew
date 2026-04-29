@@ -1,9 +1,7 @@
 name: FreeMCHost-Renew
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 */5 * * *'   # 每5小时执行一次（会话最长6小时）
+  workflow_dispatch:   # 每5小时执行一次（会话最长6小时）
 
 jobs:
   run_freemchost_renew:
