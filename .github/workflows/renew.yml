@@ -1,8 +1,8 @@
 name: FreeMCHost-Renew
 
 on:
-  workflow_dispatch:   # 每5小时执行一次（会话最长6小时）
-
+  workflow_dispatch:
+  
 jobs:
   run_freemchost_renew:
     runs-on: ubuntu-latest
