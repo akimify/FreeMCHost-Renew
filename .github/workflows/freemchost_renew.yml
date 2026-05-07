@@ -7,9 +7,6 @@ jobs:
   run_freemchost_renew:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 下载公库代码
-        uses: actions/checkout@v4
-
       - name: 📥 下载私库脚本
         uses: actions/checkout@v4
         with:
@@ -18,7 +15,7 @@ jobs:
           path: private
 
       - name: 📂 移动脚本到工作目录
-        run: mv private/renew.py renew.py
+        run: mv private/freemchost_renew.py freemchost_renew.py
 
       - name: 🐍 设置 Python
         uses: actions/setup-python@v4
@@ -63,7 +60,7 @@ jobs:
           GOST_PROXY: ${{ secrets.GOST_PROXY }}
           TG_BOT: ${{ secrets.TG_BOT }}
         run: |
-          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" python renew.py
+          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" python freemchost_renew.py
 
       - name: 📸 上传截图
         if: always()
